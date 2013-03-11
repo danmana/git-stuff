@@ -15,6 +15,8 @@ Various git configurations
 		rw = commit --amend -m
         aliases = !git config --get-regexp 'alias.*' | cut -c 7- | sed "'s/^\\(\\S\\+\\)/\\x1b[1;36m\\1\\x1b[0m/'"
         ahead = !sh -c 'BR=$(git rev-parse --abbrev-ref HEAD) && git log origin/$BR..$BR --oneline'
+		push-gerrit = !sh -c 'git push $(git config --get remote.origin.url) HEAD:refs/for/$(git rev-parse --abbrev-ref HEAD)'
+		pg = !sh -c 'git push-gerrit'
 [push]
         default = upstream
 ```
