@@ -10,6 +10,7 @@ Various git configurations
         pr = pull --rebase
         st = status
         cm = commit -m
+        fixup = commit --amend --no-edit
         cfg = config --global
 		reword = commit --amend
 		rw = commit --amend -m
