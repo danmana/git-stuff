@@ -21,6 +21,7 @@ Various git configurations
 		pg = !sh -c 'git push-gerrit'
 		pgo = !sh -c 'git push-gerrit-one'
 		unadd = reset HEAD
+		prune-branches = !git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D
 [push]
         default = upstream
 ```
