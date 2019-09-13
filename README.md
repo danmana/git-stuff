@@ -28,4 +28,6 @@ Various git configurations
         prune-branches = !git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D
 [push]
         default = upstream
+[fetch]
+        prune = true
 ```
